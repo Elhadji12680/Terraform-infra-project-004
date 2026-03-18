@@ -4,7 +4,7 @@ variable "vpc_cidr_block" {
 
 variable "subnet_cidr_block" {
   type = list(string)
-  
+
 }
 variable "availability_zone" {
   type = list(string)
