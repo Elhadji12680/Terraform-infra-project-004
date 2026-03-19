@@ -58,7 +58,7 @@ resource "aws_subnet" "private_subnet_az_1b" {
 })
 }
 
-# CREATING PRIVATE SUBNETS---------------------------------------- --------------------------------------------------------------------------
+# CREATING DB SUBNETS---------------------------------------- --------------------------------------------------------------------------
 
 resource "aws_subnet" "db_subnet_az_1a" {
   vpc_id     = aws_vpc.main_vpc.id
