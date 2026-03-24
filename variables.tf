@@ -10,7 +10,7 @@ variable "availability_zone" {
   type = list(string)
 }
 variable "bastion_host_ami" {
-    type = string
+  type = string
 }
 variable "bastion_host_instance_type" {
   type = string

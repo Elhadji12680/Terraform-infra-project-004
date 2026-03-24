@@ -21,11 +21,11 @@ module "vpc" {
 }
 
 module "ec2" {
-  source            = "./ec2"
-  vpc_id            = module.vpc.vpc_id
-  subnet_id         = module.vpc.subnet_id
-  bastion_host_ami  = var.bastion_host_ami
+  source                     = "./ec2"
+  vpc_id                     = module.vpc.vpc_id
+  subnet_id                  = module.vpc.subnet_id
+  bastion_host_ami           = var.bastion_host_ami
   bastion_host_instance_type = var.bastion_host_instance_type
-  key_name          = var.key_name
-  tags              = local.project_tags
+  key_name                   = var.key_name
+  tags                       = local.project_tags
 }
