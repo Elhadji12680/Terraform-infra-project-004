@@ -115,7 +115,7 @@ resource "aws_eip" "eip_az_1a" {
 # CREATING NATGATEWAY az 1a ----------------------------------------------------------------
 resource "aws_nat_gateway" "nat_gw_az_1a" {
   allocation_id = aws_eip.eip_az_1a.id
-  subnet_id     = aws_subnet.public_subnet_az_1a
+  subnet_id     = aws_subnet.db_subnet_az_1a.id
 
   tags =  merge(var.tags, {
   Name = "${var.tags["project"]}-${var.tags["application"]}-${var.tags["environment"]}-nat-gw-az-1a"
