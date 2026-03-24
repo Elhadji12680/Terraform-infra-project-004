@@ -132,7 +132,7 @@ resource "aws_route_table" "private_rt_az_1a" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.nat_gw_az_1a.id
+    gateway_id = aws_nat_gateway.nat_gw_az_1a.id
   }
   tags =  merge(var.tags, {
   Name = "${var.tags["project"]}-${var.tags["application"]}-${var.tags["environment"]}-private-rt-az-1a"
@@ -178,7 +178,7 @@ resource "aws_route_table" "private_rt_az_1b" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.nat_gw_az_1b.id
+    gateway_id = aws_nat_gateway.nat_gw_az_1b.id
   }
   tags =  merge(var.tags, {
   Name = "${var.tags["project"]}-${var.tags["application"]}-${var.tags["environment"]}-private-rt-az-1b"
