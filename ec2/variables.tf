@@ -5,15 +5,21 @@ variable "tags" {
   type = map(string)
 }
 
-variable "bastion_host_ami" {
+variable "ami" {
     type = string
 }
-variable "bastion_host_instance_type" {
+variable "instance_type" {
   type = string
 }
-variable "subnet_id" {
+variable "public_subnet_az_1a_id" {
   type = string
 }
 variable "key_name" {
+  type = string
+}
+variable "private_subnet_az_1a_id" {
+  type = string
+}
+variable "private_subnet_az_1b_id" {
   type = string
 }
