@@ -13,3 +13,4 @@ variable "subnet_cidr_block" {
 variable "availability_zone" {
   type = list(string)
 }
+

@@ -23,9 +23,10 @@ module "vpc" {
 module "ec2" {
   source                     = "./ec2"
   vpc_id                     = module.vpc.vpc_id
-  subnet_id                  = module.vpc.subnet_id
-  bastion_host_ami           = var.bastion_host_ami
-  bastion_host_instance_type = var.bastion_host_instance_type
+  public_subnet_az_1a_id     = module.vpc.public_subnet_az_1a_id
+  private_subnet_az_1a_id    = module.vpc.private_subnet_az_1a_id
+  ami                        = var.ami
+  instance_type              = var.instance_type
   key_name                   = var.key_name
   tags                       = local.project_tags
 }
