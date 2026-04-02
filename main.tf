@@ -23,9 +23,9 @@ module "vpc" {
 module "ec2" {
   source                  = "./ec2"
   vpc_id                  = module.vpc.vpc_id
-  public_subnet_az_1a_id  = module.vpc.public_subnet_az_1a_id
-  private_subnet_az_1a_id = module.vpc.private_subnet_az_1a_id
-  private_subnet_az_1b_id = module.vpc.private_subnet_az_1b_id
+  public_subnet_az_1a_id  = var.public_subnet_az_1a_id
+  private_subnet_az_1a_id = var.private_subnet_az_1a_id
+  private_subnet_az_1b_id = var.private_subnet_az_1b_id
   ami                     = var.ami
   instance_type           = var.instance_type
   key_name                = var.key_name
