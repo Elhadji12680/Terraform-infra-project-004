@@ -18,12 +18,3 @@ variable "instance_type" {
 variable "key_name" {
   type = string
 }
-variable "private_subnet_az_1a_id" {
-  type = string
-}
-variable "public_subnet_az_1a_id" {
-  type = string
-}
-variable "private_subnet_az_1b_id" {
-  type = string
-}
