@@ -67,7 +67,7 @@ resource "aws_instance" "private_server_az_1a" {
   ami           = var.ami
   instance_type = var.instance_type
   subnet_id     = var.private_subnet_az_1a_id
-  security_groups = [aws_security_group.private_server_sg]
+  security_groups = [aws_security_group.private_server_sg.id]
   key_name = var.key_name
   associate_public_ip_address = false
   
@@ -82,7 +82,7 @@ resource "aws_instance" "private_server_az_1b" {
   ami           = var.ami
   instance_type = var.instance_type
   subnet_id     = var.private_subnet_az_1b_id
-  security_groups = [aws_security_group.private_server_sg]
+  security_groups = [aws_security_group.private_server_sg.id]
   key_name = var.key_name
   associate_public_ip_address = false
   
