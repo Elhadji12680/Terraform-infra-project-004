@@ -52,5 +52,6 @@ module "auto-scalling" {
   tags                    = local.project_tags
   max_size = var.max_size
   min_size = var.min_size
+  desired_capacity = var.desired_capacity
   jupiter_app_tg_arn = module.alb.jupiter_app_tg_arn
 }

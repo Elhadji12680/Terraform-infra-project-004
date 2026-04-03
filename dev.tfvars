@@ -6,3 +6,5 @@ instance_type     = "t3.micro"
 key_name          = "jupiter-keys" # Replace with your actual key pair name max_size                  = 6
  max_size         = 6
   min_size        = 2
+  desired_capacity= 4
+ 

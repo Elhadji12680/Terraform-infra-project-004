@@ -66,7 +66,7 @@ resource "aws_autoscaling_group" "jupiter_app_asg" {
   min_size                  = var.min_size
   health_check_grace_period = 300
   health_check_type         = "ELB"
-  desired_capacity          = 4
+  desired_capacity          = var.desired_capacity
   force_delete              = true
   vpc_zone_identifier       = [var.public_subnet_az_1a_id, var.public_subnet_az_1b_id]
   target_group_arns = [var.jupiter_app_tg_arn]

@@ -32,3 +32,6 @@ variable "public_subnet_az_1a_id" {
 variable "jupiter_app_tg_arn" {
   type = string
 }
+variable "desired_capacity" {
+  type = number
+}

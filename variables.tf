@@ -25,3 +25,6 @@ variable "max_size" {
 variable "min_size" {
   type = number
 }
+variable "desired_capacity" {
+  type = number
+}
