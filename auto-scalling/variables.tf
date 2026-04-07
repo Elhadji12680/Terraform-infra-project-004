@@ -30,7 +30,7 @@ variable "public_subnet_az_1a_id" {
   type = string
 }
 variable "jupiter_app_tg_arn" {
-  type = string
+  type = list(string)
 }
 variable "desired_capacity" {
   type = number
