@@ -33,25 +33,25 @@ module "ec2" {
 }
 
 module "alb" {
-  source = "./alb"
-  vpc_id = module.vpc.vpc_id
-  tags = local.project_tags
+  source                 = "./alb"
+  vpc_id                 = module.vpc.vpc_id
+  tags                   = local.project_tags
   public_subnet_az_1a_id = module.vpc.public_subnet_az_1a_id
   public_subnet_az_1b_id = module.vpc.public_subnet_az_1b_id
 }
 
 module "auto-scalling" {
-  source = "./auto-scalling"
+  source                  = "./auto-scalling"
   vpc_id                  = module.vpc.vpc_id
   public_subnet_az_1a_id  = module.vpc.public_subnet_az_1a_id
-  public_subnet_az_1b_id = module.vpc.public_subnet_az_1b_id
-   private_subnet_az_1a_id = module.vpc.private_subnet_az_1a_id
+  public_subnet_az_1b_id  = module.vpc.public_subnet_az_1b_id
+  private_subnet_az_1a_id = module.vpc.private_subnet_az_1a_id
   ami                     = var.ami
   instance_type           = var.instance_type
   key_name                = var.key_name
   tags                    = local.project_tags
-  max_size = var.max_size
-  min_size = var.min_size
-  desired_capacity = var.desired_capacity
-  jupiter_app_tg_arn = module.alb.jupiter_app_tg_arn
+  max_size                = var.max_size
+  min_size                = var.min_size
+  desired_capacity        = var.desired_capacity
+  jupiter_app_tg_arn      = module.alb.jupiter_app_tg_arn
 }

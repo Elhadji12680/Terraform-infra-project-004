@@ -4,7 +4,7 @@ availability_zone = ["us-east-1a", "us-east-1b"]
 ami               = "ami-02dfbd4ff395f2a1b" # Amazon Linux 2 AMI (HVM), SSD Volume Type
 instance_type     = "t3.micro"
 key_name          = "jupiter-keys" # Replace with your actual key pair name max_size                  = 6
- max_size         = 6
-  min_size        = 2
-  desired_capacity= 4
- 
+max_size          = 6
+min_size          = 2
+desired_capacity  = 4
+

@@ -48,7 +48,7 @@ resource "aws_launch_template" "jupiter_launch_template" {
   image_id      = var.ami
   instance_type = var.instance_type
   key_name = var.key_name
-  user_data = base64decode(file("scripts/jupiter-app-deployment.sh"))
+  user_data = base64encode(file("scripts/jupiter-app-deployment.sh"))
     network_interfaces {
         security_groups = [aws_security_group.jupiter_server_sg.id]
         subnet_id       = var.private_subnet_az_1a_id

@@ -21,7 +21,7 @@ variable "key_name" {
 
 variable "max_size" {
   type = number
-} 
+}
 variable "min_size" {
   type = number
 }
