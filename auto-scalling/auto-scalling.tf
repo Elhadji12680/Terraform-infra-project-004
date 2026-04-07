@@ -69,7 +69,7 @@ resource "aws_autoscaling_group" "jupiter_app_asg" {
   desired_capacity          = var.desired_capacity
   force_delete              = true
   vpc_zone_identifier       = [var.public_subnet_az_1a_id, var.public_subnet_az_1b_id]
-  target_group_arns = [var.jupiter_app_tg_arn]
+  target_group_arns = var.jupiter_app_tg_arn
   launch_template {
     id      = aws_launch_template.jupiter_launch_template.id
     version = "$Latest"
