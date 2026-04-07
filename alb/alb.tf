@@ -56,7 +56,7 @@ resource "aws_lb" "jupiter_app_alb" {
   security_groups    = [aws_security_group.alb_sg.id]
   subnets            = [var.public_subnet_az_1a_id, var.public_subnet_az_1b_id]
 
-  enable_deletion_protection = false
+  enable_deletion_protection = true
     #access_logs {
    # bucket  = "alb-access-logs-bucket"
     #enabled = true }
