@@ -58,9 +58,9 @@ module "auto-scalling" {
   jupiter_app_tg_arn      = [module.alb.jupiter_app_tg_arn]
 }
 module "route53" {
-  source                  = "./route53"
-  name                    = var.name
-  route53_zone_id         = var.route53_zone_id
-  alb_dns_name            = module.alb.alb_dns_name
-  alb_zone_id             = module.alb.alb_zone_id
+  source          = "./route53"
+  name            = var.name
+  route53_zone_id = var.route53_zone_id
+  alb_dns_name    = module.alb.alb_dns_name
+  alb_zone_id     = module.alb.alb_zone_id
 }
