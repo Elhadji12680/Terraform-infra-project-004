@@ -38,6 +38,8 @@ module "alb" {
   tags                   = local.project_tags
   public_subnet_az_1a_id = module.vpc.public_subnet_az_1a_id
   public_subnet_az_1b_id = module.vpc.public_subnet_az_1b_id
+  ssl_policy             = var.ssl_policy
+  certificate_arn        = var.certificate_arn
 }
 
 module "auto-scalling" {
@@ -54,4 +56,11 @@ module "auto-scalling" {
   min_size                = var.min_size
   desired_capacity        = var.desired_capacity
   jupiter_app_tg_arn      = [module.alb.jupiter_app_tg_arn]
+}
+module "route53" {
+  source          = "./route53"
+  name            = var.name
+  route53_zone_id = var.route53_zone_id
+  alb_dns_name    = module.alb.alb_dns_name
+  alb_zone_id     = module.alb.alb_zone_id
 }
