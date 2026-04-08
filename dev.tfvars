@@ -10,4 +10,4 @@ desired_capacity  = 4
 ssl_policy        = "ELBSecurityPolicy-TLS13-1-2-Res-PQ-2025-09"
 certificate_arn   = "arn:aws:acm:us-east-1:171239862305:certificate/423ee0b3-f93b-4c60-ad7e-accbd1699228"
 route53_zone_id   = "Z09425701ZBOOY51HU7PN" # Replace with your actual hosted zone ID
-name              = "www.elvictura.com"
+name              = "elvictura.com"
