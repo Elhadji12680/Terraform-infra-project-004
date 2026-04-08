@@ -55,7 +55,7 @@ module "auto-scalling" {
   max_size                = var.max_size
   min_size                = var.min_size
   desired_capacity        = var.desired_capacity
-  jupiter_app_tg_arn      = [module.alb.jupiter_app_tg_arn]
+  jupiter_app_tg_arn      = module.alb.jupiter_app_tg_arn
 }
 module "route53" {
   source          = "./route53"
