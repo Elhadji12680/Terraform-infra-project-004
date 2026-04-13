@@ -51,7 +51,7 @@ resource "aws_launch_template" "jupiter_launch_template" {
   user_data = base64encode(file("scripts/jupiter-app-deployment.sh"))
     network_interfaces {
         security_groups = [aws_security_group.jupiter_server_sg.id]
-        subnet_id       = var.private_subnet_az_1a_id
+        associate_public_ip_address = true
     }
     
      tags = merge(var.tags, {

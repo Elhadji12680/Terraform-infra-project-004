@@ -13,9 +13,7 @@ variable "instance_type" {
 variable "key_name" {
   type = string
 }
-variable "private_subnet_az_1a_id" {
-  type = string
-}
+
 variable "max_size" {
   type = number
 } 
