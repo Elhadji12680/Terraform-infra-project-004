@@ -47,7 +47,7 @@ module "auto-scalling" {
   vpc_id                  = module.vpc.vpc_id
   public_subnet_az_1a_id  = module.vpc.public_subnet_az_1a_id
   public_subnet_az_1b_id  = module.vpc.public_subnet_az_1b_id
-  private_subnet_az_1a_id = module.vpc.private_subnet_az_1a_id
+
   ami                     = var.ami
   instance_type           = var.instance_type
   key_name                = var.key_name
