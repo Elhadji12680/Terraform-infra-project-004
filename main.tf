@@ -64,3 +64,24 @@ module "route53" {
   alb_dns_name    = module.alb.alb_dns_name
   alb_zone_id     = module.alb.alb_zone_id
 }
+
+module "rds" {
+  source                   = "./rds"
+  rds_secrets_manager_role = module.iam.rds_secrets_manager_role
+  engine                   = var.engine
+  engine_version           = var.engine_version
+  vpc_id                   = module.vpc.vpc_id
+  db_name                  = var.db_name
+  db_subnet_az_1a          = module.vpc.db_subnet_az_1a
+  db_subnet_az_1b          = module.vpc.db_subnet_az_1b
+  instance_class           = var.instance_class
+  allocated_storage        = var.allocated_storage
+  parameter_group_name     = var.parameter_group_name
+  tags                     = local.project_tags
+}
+
+module "iam" {
+  source     = "./iam"
+  account_id = var.account_id
+  region     = var.region
+}
