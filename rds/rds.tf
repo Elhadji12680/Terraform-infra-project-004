@@ -64,7 +64,7 @@ resource "aws_db_instance" "rds_mysql" {
 })
 }     
                   
-resource "aws_db_instance_role_association" "example" {
+resource "aws_db_instance_role_association" "rds_secrets_manager_role" {
   db_instance_identifier = aws_db_instance.rds_mysql.id
   feature_name           = "secretsManager"
   role_arn               = var.rds_secrets_manager_role
