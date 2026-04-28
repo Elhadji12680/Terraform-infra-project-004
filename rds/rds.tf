@@ -52,9 +52,9 @@ resource "aws_db_instance" "rds_mysql" {
   password             = jsondecode(data.aws_secretsmanager_secret_version.db_password_version.secret_string)   ["mysql_usename"]   #important
   parameter_group_name = var.parameter_group_name
   skip_final_snapshot    = true
-  multi_az = true
+  multi_az               = true
   publicly_accessible    = false
-  storage_type = "gp2"   
+  storage_type           = "gp2"   
   db_subnet_group_name   = aws_db_subnet_group.db_subnet_group.id    
   vpc_security_group_ids =     [aws_security_group.rds_sg.id]           
   iam_database_authentication_enabled =      true  

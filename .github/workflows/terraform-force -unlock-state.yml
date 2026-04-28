@@ -1,0 +1,49 @@
+terraform-force-unlock-state.yml
+
+name: Terraform Force Unlock
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  unlock:
+    runs-on: ubuntu-latest
+    environment: development
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      # 1️⃣ Checkout repo
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ Configure AWS Credentials
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      # 3️⃣ Setup Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      # 4️⃣ Terraform Init (required to access backend)
+      - name: Terraform Init
+        run: terraform init -input=false
+
+      # 5️⃣ Select workspace
+      - name: Select Workspace
+        run: terraform workspace select -or-create dev
+
+      # 6️⃣ Force unlock state
+      - name: Force Unlock Terraform State
+        run: |
+          terraform force-unlock -force 45f706ca-2783-8c1d-fa18-ae43620100af
